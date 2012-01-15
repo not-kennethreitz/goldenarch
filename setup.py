@@ -19,7 +19,7 @@ deps = [
     'gevent>=0.13.6',
     'greenlet>=0.3.1',
     'gunicorn>=0.13.4',
-    'Werkzeug>=0.8.1'
+    'static>=0.4'
 ]
 
 setup(
