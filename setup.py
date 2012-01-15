@@ -16,14 +16,15 @@ if sys.argv[-1] == 'publish':
 
 
 deps = [
-    'gevent==0.13.6',
-    'greenlet==0.3.1',
-    'gunicorn==0.13.4'
+    'gevent>=0.13.6',
+    'greenlet>=0.3.1',
+    'gunicorn>=0.13.4',
+    'Werkzeug>=0.8.1'
 ]
 
 setup(
     name='goldenarch',
-    version='0.0.1',
+    version='0.0.2',
     install_requires=deps,
     description='Serves crap. faast.',
     long_description='Meh.',
