@@ -24,7 +24,7 @@ deps = [
 
 setup(
     name='goldenarch',
-    version='0.0.2',
+    version='0.0.3',
     install_requires=deps,
     description='Serves crap. faast.',
     long_description='Meh.',
