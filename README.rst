@@ -9,7 +9,6 @@ Usage
 
 Serve a directory::
 
-    $ goldenarch --dir <dir> --port 80
+    $ goldenarch <dir>
 
-Optionally, the ``STATIC_DIR`` and ``PORT`` environment variables can
-set instead.
+The ``PORT`` environment variable can be set to specify the port the serve on.
