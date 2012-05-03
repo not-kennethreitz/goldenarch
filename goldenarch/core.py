@@ -33,4 +33,7 @@ def cli():
 
 
 if __name__ == '__main__':
-    cli()
+    try:
+        cli()
+    except KeyboardInterrupt:
+        sys.exit()
