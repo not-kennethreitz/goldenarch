@@ -22,18 +22,15 @@ app = static.Cling(STATIC_DIR)
 def cli():
     print 'Serving crap. Fast.'
 
-    cmd = (
-        'gunicorn goldenarch:app '
-        '-b "0.0.0.0:{port}" '
-        '-w 16 -k gevent -t 2 '
-        '--name goldenarch'
-    ).format(port=PORT)
+    argv = [
+        'gunicorn', 'goldenarch:app',
+        '-b', '0.0.0.0:{port}'.format(port=PORT),
+        '-w', '16', '-k', 'gevent', '-t', '2',
+        '--name', 'goldenarch'
+    ]
 
-    os.system(cmd)
+    os.execvp('gunicorn', argv)
 
 
 if __name__ == '__main__':
-    try:
-        cli()
-    except KeyboardInterrupt:
-        sys.exit()
+    cli()
