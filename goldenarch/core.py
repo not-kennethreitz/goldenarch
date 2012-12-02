@@ -8,28 +8,26 @@ Serves crap. Fast.
 """
 
 import os
-import sys
 
 import static
 
 PORT = os.environ.get('PORT', 8000)
+STATIC_DIR = os.environ.get('STATIC_DIR', '.')
 
-def app(static_dir):
-    return static.Cling(static_dir)
+
+app = static.Cling(STATIC_DIR)
 
 def cli():
     print 'Serving crap. Fast.'
 
-    static_dir = sys.argv[1]
+    cmd = (
+        'gunicorn goldenarch:app '
+        '-b "0.0.0.0:{port}" '
+        '-w 16 -k gevent -t 2 '
+        '--name goldenarch'
+    ).format(port=PORT)
 
-    argv = [
-        'gunicorn', 'goldenarch:app("{dir}")'.format(dir=static_dir),
-        '-b', '0.0.0.0:{port}'.format(port=PORT),
-        '-w', '16', '-k', 'gevent', '-t', '2',
-        '--name', 'goldenarch'
-    ]
-
-    os.execvp('gunicorn', argv)
+    os.system(cmd)
 
 
 if __name__ == '__main__':
