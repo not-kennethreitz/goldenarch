@@ -9,6 +9,7 @@ Serves crap. Fast.
 from __future__ import print_function
 
 import os
+import subprocess
 
 import static
 
@@ -28,7 +29,7 @@ def cli():
         '--name goldenarch'
     ).format(port=PORT)
 
-    os.system(cmd)
+    return subprocess.call(cmd)
 
 
 if __name__ == '__main__':
