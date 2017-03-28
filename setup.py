@@ -30,7 +30,7 @@ setup(
     long_description='Meh.',
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
-    url='http://kennethreitz.com',
+    url='https://github.com/kennethreitz/goldenarch',
     packages=['goldenarch'],
     license='MIT',
     classifiers=(
